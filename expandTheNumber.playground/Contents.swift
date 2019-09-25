@@ -2,6 +2,22 @@ import Foundation
 
 func expandTheNumber(_ number: Int) -> [Int] {
     
+    var number = number
+    var baseTenIndex = 10
+    var intArray: [Int] = []
+    
+    if number == 0 {
+        intArray.append(0)
+    } else {
+        repeat {
+            let appendingNumber = number % baseTenIndex
+            intArray.append(appendingNumber)
+            number = number - appendingNumber
+            baseTenIndex = baseTenIndex * 10
+        } while number > 10 
+    }
+    return intArray.reversed()
+    
 }
 
 expandTheNumber(199)  // [100, 90, 9]
