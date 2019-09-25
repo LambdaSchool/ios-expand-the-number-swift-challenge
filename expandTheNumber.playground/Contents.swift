@@ -1,15 +1,25 @@
 import Foundation
 
 func expandTheNumber(_ number: Int) -> [Int] {
-    
+    var number = number
     var arrayOfInt: [Int] = []
-    var calculationNumber = number
-    while number > 0 {
-        arrayOfInt.append(number % 10)
-        calculationNumber = calculationNumber / 10
+    var currentMultiple = 10
+    
+    if number == 0 {
+        arrayOfInt.append(0)
+    } else {
+        
+        while number > 10 {
+            
+            let numberToBeStored = number % currentMultiple
+            arrayOfInt.append(numberToBeStored)
+            number = number - numberToBeStored
+            currentMultiple = currentMultiple * 10
+            
+        }
     }
     
-    return arrayOfInt
+    return arrayOfInt.reversed()
 }
 
 expandTheNumber(199)  // [100, 90, 9]
