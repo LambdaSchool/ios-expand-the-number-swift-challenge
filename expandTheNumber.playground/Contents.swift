@@ -2,6 +2,13 @@ import Foundation
 
 func expandTheNumber(_ number: Int) -> [Int] {
     
+    
+    let stringNumber = String(number)
+    
+    let digits = stringNumber.map { $0.wholeNumberValue }
+    
+    
+    return digits as! [Int]
 }
 
 expandTheNumber(199)  // [100, 90, 9]
