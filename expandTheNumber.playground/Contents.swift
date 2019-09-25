@@ -2,6 +2,14 @@ import Foundation
 
 func expandTheNumber(_ number: Int) -> [Int] {
     
+    var arrayOfInt: [Int] = []
+    var calculationNumber = number
+    while number > 0 {
+        arrayOfInt.append(number % 10)
+        calculationNumber = calculationNumber / 10
+    }
+    
+    return arrayOfInt
 }
 
 expandTheNumber(199)  // [100, 90, 9]
