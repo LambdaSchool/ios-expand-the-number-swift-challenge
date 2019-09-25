@@ -1,7 +1,10 @@
 import Foundation
+import UIKit
 
 func expandTheNumber(_ number: Int) -> [Int] {
+    var digits = String(describing: number).compactMap { Int(String($0)) }
     
+    return digits
 }
 
 expandTheNumber(199)  // [100, 90, 9]
