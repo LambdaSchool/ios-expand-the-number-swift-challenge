@@ -2,13 +2,19 @@ import Foundation
 
 func expandTheNumber(_ number: Int) -> [Int] {
     
-    
-    let stringNumber = String(number)
-    
-    let digits = stringNumber.map { $0.wholeNumberValue }
-    
-    
-    return digits as! [Int]
+    let number = number
+    let string = String(number)
+    var count = string.count - 1
+    var resultArray = [Int]()
+    for number in string {
+        let result = String(repeating: "0", count: count)
+        let fullResult = String(number) + result
+        if let integer = Int(fullResult) {
+            resultArray.append(integer)
+        }
+        count -= 1
+    }
+    return resultArray
 }
 
 expandTheNumber(199)  // [100, 90, 9]
