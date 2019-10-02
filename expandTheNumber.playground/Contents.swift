@@ -1,6 +1,14 @@
 import Foundation
 
 func expandTheNumber(_ number: Int) -> [Int] {
+    
+    // The idea is to convert the integer into a string and then iterate backwards through
+    // each character in the string (of length ".count").
+    // Each character is added to the array but first it is turned back into an integer
+    // and then it is briefly turned into a double in order to use the "pow" fuction.
+    // The pow function multiplies it by the appropriate factor of 10.
+    // The array is then reversed and returned.
+    
     let numberString = String(number)
     let digits = numberString.count
 
@@ -21,13 +29,5 @@ expandTheNumber(0)    // [0]
 expandTheNumber(562)  // [500, 60, 2]
 expandTheNumber(5280) // [5000, 200, 80, 0]
 expandTheNumber(560)  // [500, 60, 0]
-
-let numb = 1000
-let numbString = String(numb)
-numbString.count
-numbString[numbString.startIndex]
-numbString[numbString.index(numbString.startIndex, offsetBy: (numbString.count - 1))]
-
-
 
 
