@@ -3,20 +3,16 @@ import Foundation
 func expandTheNumber(_ number: Int) -> [Int] {
     let numberString = String(number)
     let digits = numberString.count
-    
+
     var array: [Int] = []
     for n in 1...digits {
-        let digit = numberString[numberString.index(numberString.startIndex, offsetBy: (numberString.count - n))]
-        let number = Int?(digit)
-        array.append(number)
+        let digitChar = numberString[numberString.index(numberString.startIndex, offsetBy: (digits - n))]
+        if let number = Int(String(digitChar)) {
+            let entry = Double(number) * (pow(10.0, Double(n - 1)))
+            array.append(Int(entry))
+        }
     }
-    }
-    
-
-//    switch digits {
-//    case 0...5:
-
-
+    return array.reversed()
 }
 
 expandTheNumber(199)  // [100, 90, 9]
@@ -31,5 +27,7 @@ let numbString = String(numb)
 numbString.count
 numbString[numbString.startIndex]
 numbString[numbString.index(numbString.startIndex, offsetBy: (numbString.count - 1))]
+
+
 
 
