@@ -5,9 +5,9 @@ func expandTheNumber(_ number: Int) -> [Int] {
     let digits = numberString.count
     
     var array: [Int] = []
-    for n in 0...digits {
+    for n in 1...digits {
         let digit = numberString[numberString.index(numberString.startIndex, offsetBy: (numberString.count - n))]
-        let number = Int(digit)
+        let number = Int?(digit)
         array.append(number)
     }
     }
