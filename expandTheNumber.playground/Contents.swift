@@ -17,3 +17,4 @@ expandTheNumber(5280) // [5000, 200, 80, 0]
 expandTheNumber(560)  // [500, 60, 0]
 
 
+// defeated 
