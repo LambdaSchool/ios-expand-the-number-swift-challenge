@@ -1,7 +1,20 @@
 import Foundation
 
 func expandTheNumber(_ number: Int) -> [Int] {
+    var numArray: [Int] = []
+    var remainder: Int = 0
+    var number = number
     
+    for i in 0..<String(number).count {
+        remainder = number % 10
+        remainder *= Int(pow(10.0, Double(i)))
+        number /= 10
+        numArray.append(remainder)
+    }
+    
+    numArray.reverse()
+    print(numArray)
+    return numArray
 }
 
 expandTheNumber(199)  // [100, 90, 9]
