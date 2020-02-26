@@ -1,6 +1,19 @@
 import Foundation
 
 func expandTheNumber(_ number: Int) -> [Int] {
+    // need to get digit & index in number.length
+    // number.length - index = how many zeroes need to be added to expanded number
+    // append number to expandedNumber[]
+    var expandedNumber: [Int] = []
+    
+    let numString = String(number)
+    let stringLength = numString.length
+    
+    for i in String(number).length {
+        if i = 0 {
+            
+        }
+    }
     
 }
 
