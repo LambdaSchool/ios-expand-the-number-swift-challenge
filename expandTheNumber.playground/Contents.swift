@@ -5,18 +5,17 @@ func expandTheNumber(_ number2: Int) -> [Int] {
     var result: [Int] = []
     var iteration = 1
     
-    while number > 0 {
+    repeat {
         let remainder = number % 10
         
-        //print(remainder, iteration)
+        print(remainder, iteration)
         result.insert(remainder * iteration, at: 0)
 
         // Prepare for next iteration
         number = number / 10
         iteration *= 10
-    }
+    } while number > 0
     
-    if result.count == 0 { result.insert(0, at: 0) }
     return result
 }
 
