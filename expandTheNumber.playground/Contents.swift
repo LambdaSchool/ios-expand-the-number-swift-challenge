@@ -1,12 +1,26 @@
-import Foundation
+import UIKit
 
-func expandTheNumber(_ number: Int) -> [Int] {
+var numbers: [String] = []
+var test = ""
+
+func expandTheNumber(num: Int) {
+    let characters = String(num)
+    let amt = characters.count
+    let first = characters.prefix(1)
+    let firstConverted = Int(first)
+    // need to convert to nth place out in 0s
+   
+    
+    for _ in 1...amt-1 {
+        let zero = "0"
+        let place = test + zero
+       // numbers.append(characters[a])
+       test = place
+        
+    }
+   
+print(first + test)
     
 }
+ expandTheNumber(num: 450)
 
-expandTheNumber(199)  // [100, 90, 9]
-expandTheNumber(100)  // [100, 0, 0]
-expandTheNumber(0)    // [0]
-expandTheNumber(562)  // [500, 60, 2]
-expandTheNumber(5280) // [5000, 200, 80, 0]
-expandTheNumber(560)  // [500, 60, 0]
